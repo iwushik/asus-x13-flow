@@ -2,7 +2,6 @@
 
 if [ "$1" = "-u" ]; then
 	rm /etc/udev/rules.d/99-asus-flow-power.rules
-	rm /etc/udev/rules.d/99-asus-flow-power.rules
 else
 	mkdir -p /etc/udev/rules.d
 
@@ -11,7 +10,7 @@ else
 	ACTION=="add", SUBSYSTEM=="pci", TEST=="power/control", ATTR{vendor}=="0x10de", ATTR{power/control}="auto"
 	EOF
 	
-	cat <<- EOF > /etc/udev/rules.d/99-asus-flow-power.rules
+	cat <<- EOF >> /etc/udev/rules.d/99-asus-flow-power.rules
 	# nvme ssd
 	ACTION=="add", SUBSYSTEM=="pci", DRIVER=="nvme", TEST=="power/control", ATTR{power/control}="auto"
 	EOF
