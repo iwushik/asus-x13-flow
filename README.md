@@ -1,50 +1,39 @@
-# Linux on Asus Flow x13 
+# TODO
 
-With small tweaks almost everything (surprisingly touch, pen input and camera) works fine .
-Notable exceptions are resume from sleep and fingerprint.
+https://www.reddit.com/r/rogflow/comments/lx7azf/rog_flow_x13_linux_update/?sort=new
 
-While writing on this, power draw from battery (with terminal, vscode and chromium open) is between 6 and 10W.
-CPU temperature is ~50C and fans are off.
+## Power
 
-To quickly install the fixes presented here one could
-```sh
-sudo sh install.sh
-```
+### Suspend
 
-And to uninstall them
-```sh
-sudo sh uninstall.sh
-```
+GPU fails to wake after suspend, hangs and needs reboot
 
+## Audio
 
-## Keyboard
-Out of the box keyboard works but Fn-Key and backlight do not.
+### Speakers
 
-Since 5.11 linux kernel support for Asus N-Key Keyboards but is missing usb device id.
-To install the patched hid-asus for Flow x13 run
-```sh
-sudo dkms install drivers/hid
-```
+???
 
-## GPU
+## Input
 
-### AMD iGPU
-Integrated gpu requires linux firmware after 11.02.2021 (having "Green Sardine").
+### Accelerometer
 
-### Nvidia
-Nouveau drivers hangs laptop at boot. It can be blacklisted by appending
-`nouveau.blacklist=1` to kernel command line or by following commands as root
-```sh
-echo "blacklist nouveau" >  /etc/modprobe.d/asus-flow-x13-nouveau.conf
-echo "alias nouveau off" >> /etc/modprobe.d/asus-flow-x13-nouveau.conf
-```
+Not working
 
-Even if nouveau or nvidia is not loaded nvidia gpu will still consume ~10W of power.
-We need to set power/control to auto to reduce power.
+### Rotation
 
-```sh
-echo auto > /sys/devices/pci0000:00/0000:00:01.1/0000:01:00.0/power/control
-echo '#nvidia dGPU' > /etc/udev/rules.d/99-asus-flow-power.rules
-echo 'ACTION=="add", SUBSYSTEM=="pci", TEST=="power/control", ATTR{vendor}=="0x10de", ATTR{power/control}="auto"' >> /etc/udev/rules.d/99-asus-flow-power.rules
-udevadm control --reload
-```
+Manual script
+
+### Disabling keyboard
+
+???
+
+### Virtual keyboard
+
+Install?
+
+## Apps
+
+### Discover
+
+Make discover work
