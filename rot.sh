@@ -1,3 +1,5 @@
+#!/bin/sh
+
 TRANSFORM_NAME='Coordinate Transformation Matrix'
 
 SCREEN='eDP'
