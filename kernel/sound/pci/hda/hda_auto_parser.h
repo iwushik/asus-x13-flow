@@ -1,0 +1,1 @@
+../../../upstream/sound/pci/hda/hda_auto_parser.h

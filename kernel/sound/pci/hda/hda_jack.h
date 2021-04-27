@@ -1,0 +1,1 @@
+../../../upstream/sound/pci/hda/hda_jack.h

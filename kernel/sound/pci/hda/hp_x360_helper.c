@@ -1,0 +1,1 @@
+../../../upstream/sound/pci/hda/hp_x360_helper.c
