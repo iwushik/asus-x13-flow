@@ -3,7 +3,7 @@
 set -e
 
 if [ "$1" = "-u" ]; then
-    dkms remove hid-asus-flow-x13/1.0 --all
+    dkms remove asus-flow-x13/1.0 --all
 else
     cp -r upstream/sound sound
     git apply patches/sound.patch
