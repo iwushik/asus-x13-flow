@@ -1,1 +1,0 @@
-../../../upstream/sound/pci/hda/thinkpad_helper.c
