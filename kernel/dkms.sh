@@ -3,7 +3,7 @@
 set -e
 
 if [ "$1" = "-u" ]; then
-    dkms remove asus-flow-x13/1.0 --all
+    sudo dkms remove asus-flow-x13/1.0 --all
 else
     rm -rf sound
     cp -r upstream/sound sound
@@ -13,7 +13,7 @@ else
     cp -r upstream/drivers drivers
     git apply patches/keyboard.patch
 
-    dkms install .
+    sudo dkms install .
 
     rm -r sound
     rm -r drivers
