@@ -18,7 +18,7 @@ Can't get nvidia to switch off on boot, have to manually run off.sh script after
 
 ### Speakers
 
-???
+Working ./kernel/upstream/sound/pci/hda and ./kernel/patches/sound.patch
 
 ## Input
 
